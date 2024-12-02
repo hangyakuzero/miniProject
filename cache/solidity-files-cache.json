@@ -766,10 +766,10 @@
         "VPS"
       ]
     },
-    "/Users/hangyaku/Desktop/hackathon/test/rwa/contracts/SendRecieve.sol": {
-      "lastModificationDate": 1727464382868,
-      "contentHash": "c68e096f7bbf89f031ed0b721cdb8241",
-      "sourceName": "contracts/SendRecieve.sol",
+    "/Users/hangyaku/Desktop/hackathon/test/rwa/contracts/Reward.sol": {
+      "lastModificationDate": 1733087120198,
+      "contentHash": "cda54fdabc624e300e4a03e4cfa8b2a8",
+      "sourceName": "contracts/Reward.sol",
       "solcConfig": {
         "version": "0.8.27",
         "settings": {
@@ -795,13 +795,13 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/access/Ownable.sol"
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
       ],
       "versionPragmas": [
-        "^0.8.20"
+        "^0.8.0"
       ],
       "artifacts": [
-        "sm"
+        "RewardDistributor"
       ]
     }
   }
