@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+//import TBT
+import VPS from src/artifacts/contracts/TBt.sol/VPS.json
 
 const TokenGatedApp = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -7,29 +9,7 @@ const TokenGatedApp = () => {
   const [error, setError] = useState(null);
 
   const contractAddress = "0x373879F914D7A3d1AaeFa3FF0acb0E58889aB150"; // Replace with your contract address
-  const contractABI = [
-    {
-      "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
-      "name": "expirationDate",
-      "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-      "stateMutability": "view",
-      "type": "function",
-    },
-    {
-      "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }],
-      "name": "balanceOf",
-      "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-      "stateMutability": "view",
-      "type": "function",
-    },
-    {
-      "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
-      "name": "ownerOf",
-      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
-      "stateMutability": "view",
-      "type": "function",
-    },
-  ];
+  const contractABI = VPS.abi;
 
   const checkTokenEligibility = async () => {
     try {
