@@ -6,7 +6,7 @@ const TokenGatedApp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const contractAddress = "0xYourContractAddress"; // Replace with your contract address
+  const contractAddress = "0x373879F914D7A3d1AaeFa3FF0acb0E58889aB150"; // Replace with your contract address
   const contractABI = [
     {
       "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],

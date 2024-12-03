@@ -13,11 +13,7 @@ async function main() {
   //vps
 const vt = await VPS.deploy(initowner);
 console.log("Contract instance DSU:", vt);
-console.log("VPS tbt deployed to:", vt.target);
-  //sm
-
-
-  
+console.log("VPS tbt deployed to:", vt.target); 
 }
 
 // Execute the main function
