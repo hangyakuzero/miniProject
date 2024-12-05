@@ -24,20 +24,16 @@ async function main() {
   console.log("Wind Farm deployed to:", wt.target);
   
 //dayanand sagar
-  const dt = await DSU.deploy(initowner);
+ /* const dt = await DSU.deploy(initowner);
   console.log("Contract instance DSU:", dt);
-  console.log("Daya deployed to:", dt.target);
+  console.log("Daya deployed to:", dt.target); */
 
 
   //vps
 const vt = await VPS.deploy(initowner);
 console.log("Contract instance DSU:", vt);
 console.log("VPS tbt deployed to:", vt.target);
-  //sm
 
-const smt = await SM.deploy(initowner);
-console.log("Contract instance DSU:", smt);
-console.log("sendrec deployed to:", smt.target);
   
 }
 

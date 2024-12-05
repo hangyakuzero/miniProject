@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
 //import Test from '@/artifacts/contracts/NFT.sol/Test.json'; // Update the path if necessary
-import SF from  src/artifacts/contracts/SolarFarms.sol/SF.json
+import SF from  '@/artifacts/contracts/SolarFarms.sol/SF.json';
 const contractAddress = '0xbaBA0D5eFCCE35253D3c8459b902d3c5A7F661d4';
 
 export default function MintNFT() {

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
 //import Test from '@/artifacts/contracts/NFT.sol/Test.json'; // Update the path if necessary
-import WF from src/artifacts/contracts/WindFarm.sol/WF.json
+import WF from '@/artifacts/contracts/WindFarm.sol/WF.json';
 const contractAddress = '0xbaBA0D5eFCCE35253D3c8459b902d3c5A7F661d4';
 
 export default function MintNFT() {
