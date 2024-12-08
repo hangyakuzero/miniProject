@@ -4,9 +4,7 @@ async function main() {
   // Get the contract factory
   const SF = await ethers.getContractFactory("SF");
   const WF = await ethers.getContractFactory("WF");
-  const DSU = await ethers.getContractFactory("DSU");
-  const VPS= await ethers.getContractFactory("VPS");
-  const SM= await ethers.getContractFactory("sm");
+
  const initowner = "0x1f9748893999BeC6339E4aDa234BD473cf232050";
   // Deploy the contract
 
@@ -30,10 +28,10 @@ async function main() {
 
 
   //vps
-const vt = await VPS.deploy(initowner);
+/*const vt = await VPS.deploy(initowner);
 console.log("Contract instance DSU:", vt);
 console.log("VPS tbt deployed to:", vt.target);
-
+*/
   
 }
 

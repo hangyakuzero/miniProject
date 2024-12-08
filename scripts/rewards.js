@@ -3,9 +3,9 @@ const { ethers } = require("hardhat");
 async function main() {
   // Get the contract factory
 
-  const solreward= await ethers.getContractFactory("Reward");
+  const solreward= await ethers.getContractFactory("RewardDistributor");
 
- const addressofsolar = "//add address here";
+ const addressofsolar = "0xa1fDfEFeA2f304B47AcD0D47597D006f3FaE0D8C";
   // Deploy the contract
 
   //solar farms

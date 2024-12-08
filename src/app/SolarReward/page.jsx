@@ -1,5 +1,6 @@
 "use client";
 
+import RewardDistributor from '@/artifacts/contracts/Reward.sol/RewardDistributor.json';
 import React, { useState } from "react";
 import { ethers } from "ethers";
 
@@ -9,18 +10,9 @@ const ClaimReward = () => {
   const [error, setError] = useState(null);
 
   // Replace with your deployed contract's address
-  const contractAddress = "0xYourContractAddress";
+  const contractAddress = "0x5280162e6A26a86329Ed752B2273927d1Cef75e4";
 
   // Replace with your contract's ABI
-  const contractABI = [
-    {
-      "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
-      "name": "claimReward",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function",
-    },
-  ];
 
   const claim = async () => {
     try {
@@ -44,7 +36,7 @@ const ClaimReward = () => {
       } */
 
       // Initialize contract instance with signer
-      const contract = new ethers.Contract(contractAddress, contractABI, signer);
+      const contract = new ethers.Contract(contractAddress, RewardDistributor.abi, signer);
 
       // Call claimReward function
       const tx = await contract.claimReward(tokenId);

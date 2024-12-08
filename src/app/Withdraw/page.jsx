@@ -2,18 +2,10 @@
 
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import SF from '@/artifacts/contracts/SolarFarms.sol/SF.json';
 
 // Replace these placeholders with your contract's details
-const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS";
-const ABI = [
-  {
-    inputs: [],
-    name: "withdraw",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-];
+const CONTRACT_ADDRESS = "0xa1fDfEFeA2f304B47AcD0D47597D006f3FaE0D8C";
 
 const WithdrawFunds = () => {
   const [status, setStatus] = useState("");
@@ -30,7 +22,7 @@ const WithdrawFunds = () => {
 
       // Get the signer and initialize the contract instance
       const signer = await provider.getSigner();
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, SF.abi, signer);
 
       setStatus("Processing withdrawal...");
 
