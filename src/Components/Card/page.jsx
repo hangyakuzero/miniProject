@@ -45,7 +45,7 @@ export default function Card() {
       <h2 className="card-title">KSIT</h2>
       <p><span className=' font-bold'>Buy KSIT</span> </p>
       <div className="card-actions justify-end">
-      <a href='/Dsu'>
+      <a href='/KSIT'>
         <button className="btn btn-primary">Know More</button>
         </a>       </div>
     </div>
