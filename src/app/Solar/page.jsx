@@ -109,6 +109,7 @@ export default function MintNFTPage() {
           >
             {loading ? "Minting..." : "MINT NOW!!"}
           </button>
+          <button className="btn btn-active btn-secondary text-[20px] font-normal" ><a href='/SolarReward'>Claim</a></button>
         </div>
       </div>
     </div>
