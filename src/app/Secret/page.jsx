@@ -36,7 +36,7 @@ export default function WithdrawFunds() {
 
   return (
     <div className='flex flex-col items-center'>
-      <h1 className='text-3xl font-bold'>Withdraw Funds</h1>
+      <h1 className='text-3xl font-bold'>Withdraw Funds from TBT</h1>
       <button 
         onClick={withdrawFunds} 
         disabled={loading} 

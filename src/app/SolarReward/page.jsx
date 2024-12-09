@@ -1,90 +1,92 @@
 "use client";
-
-import RewardDistributor from '@/artifacts/contracts/Reward.sol/RewardDistributor.json';
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import RewardDistributor from '@/artifacts/contracts/Reward.sol/RewardDistributor.json'; // Import ABI
 
 const ClaimReward = () => {
-  const [tokenId, setTokenId] = useState(""); // Token ID to claim reward for
+  const [tokenId, setTokenId] = useState("");  // Token ID for claiming reward
   const [transactionHash, setTransactionHash] = useState(null);
   const [error, setError] = useState(null);
 
   // Replace with your deployed contract's address
-  const contractAddress = "0x5280162e6A26a86329Ed752B2273927d1Cef75e4";
+  const contractAddress = "0x5280162e6A26a86329Ed752B2273927d1Cef75e4"; 
 
-  // Replace with your contract's ABI
-
-  const claim = async () => {
+  // Claim Reward function
+  const claimReward = async () => {
     try {
       if (!window.ethereum) {
         alert("Please install MetaMask!");
         return;
       }
 
-      // Request wallet connection
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      await provider.send("eth_requestAccounts", []);
-
-      // Get the signer
-      const signer = provider.getSigner();
-
-      // Ensure the wallet is connected to Polygon (Matic-Amoy) network
-      const network = await provider.getNetwork();
-     /* if (network.chainId !== 80001 && network.chainId !== 137) { // Matic-Amoy Testnet (80001) or Mainnet (137)
-        alert("Please switch your wallet to the Polygon network!");
+      // Validate the tokenId (ensure it's not empty and not negative)
+      if (tokenId === "") {
+        alert("Please enter a valid NFT Token ID");
         return;
-      } */
+      }
+      if (tokenId < 0) {
+        alert("Token ID cannot be negative");
+        return;
+      }
+      console.log("Token ID:", tokenId);
+      // Request wallet connection
+      const provider = new ethers.BrowserProvider(window.ethereum); // Use BrowserProvider in ethers.js v6
+      await provider.send("eth_requestAccounts", []);
+      const signer = await provider.getSigner();
 
-      // Initialize contract instance with signer
+      // Initialize contract instance
       const contract = new ethers.Contract(contractAddress, RewardDistributor.abi, signer);
 
       // Call claimReward function
       const tx = await contract.claimReward(tokenId);
       setTransactionHash(tx.hash);
+      setError(null);
 
       // Wait for transaction to be mined
       await tx.wait();
       alert("Reward claimed successfully!");
     } catch (err) {
-      console.error(err);
-      setError(err.message);
+      console.error('Transaction failed:', err);
+      setError(`Transaction failed: ${err.message || err}`);
     }
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Claim Reward</h2>
-      <div>
-        <label>
-          Token ID:
+    <div className="flex flex-col items-center p-8 bg-gray-50 rounded-lg shadow-lg max-w-md mx-auto">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Claim Your Reward</h2>
+      <div className="w-full space-y-4">
+        <label className="block text-lg font-medium text-gray-700">
+          NFT Token ID:
           <input
             type="number"
             value={tokenId}
             onChange={(e) => setTokenId(e.target.value)}
-            placeholder="Enter your NFT Token ID"
+            placeholder="Enter NFT Token ID"
+            className="mt-2 w-full px-4 py-2 border rounded-lg border-gray-300 focus:ring-2 focus:ring-blue-500"
           />
         </label>
+        <button
+          onClick={claimReward}
+          className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+        >
+          Claim Reward
+        </button>
       </div>
-      <button
-        className="btn btn-active btn-primary text-[20px] font-normal"
-        onClick={claim}
-        style={{ marginTop: "10px" }}
-      >
-        Claim Reward
-      </button>
+
       {transactionHash && (
-        <p>
+        <p className="mt-6 text-sm text-gray-600">
           Transaction Hash:{" "}
           <a
-            href={`https://mumbai.polygonscan.com/tx/${transactionHash}`} // Updated for Polygon Mumbai Testnet
+            href={`https://www.oklink.com/amoy/tx/${transactionHash}`}
             target="_blank"
             rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
           >
             {transactionHash}
           </a>
         </p>
       )}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {error && <p className="mt-4 text-red-500 text-sm">{error}</p>}
     </div>
   );
 };

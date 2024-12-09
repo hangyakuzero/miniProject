@@ -39,7 +39,7 @@ const WithdrawFunds = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
       <div className="card w-96 bg-gray shadow-xl p-5">
-        <h2 className="text-2xl font-bold text-center mb-4">Withdraw Funds</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Withdraw Funds from Solar Farms Contract</h2>
         <button
           onClick={withdrawFunds}
           className="btn btn-primary btn-block"

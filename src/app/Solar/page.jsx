@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import SF from '@/artifacts/contracts/SolarFarms.sol/SF.json'; // Update the path if necessary
 
-const contractAddress = '0xBbee6AEA37a6Da20962F9cD8e221798a0a926AFD';
+const contractAddress = '0xa1fDfEFeA2f304B47AcD0D47597D006f3FaE0D8C';
 const POLYGON_AMOY_CHAIN_ID = '0x13882'; // Chain ID for Polygon Amoy Testnet (80002 in hex)
 
 export default function MintNFTPage() {

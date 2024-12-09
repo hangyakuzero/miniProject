@@ -7,7 +7,7 @@ const DepositFunds = () => {
   const [error, setError] = useState(null);
 
   // Replace with your deployed contract's address
-  const contractAddress = "0xYourContractAddress";
+  const contractAddress = "0x5280162e6A26a86329Ed752B2273927d1Cef75e4";
 
   // Replace with your contract's ABI
   const contractABI = [
