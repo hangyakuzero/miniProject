@@ -75,10 +75,10 @@ export default function MintNFTPage() {
         alt="RWA" />
         <div className=' text-center w-full pt-5'>
 
-        <p className=' text-6xl font-extrabold'> Dayanand Sagar University</p>
+        <p className=' text-6xl font-extrabold'> KSIT</p>
         <br></br>
         <div className=' text-xl px-5 space-y-4'>
-        <p>JUST FOR THE LOLZ, Buy Dayanand Sagar  </p>
+        <p>won't demonstrate it, just for the memes  </p>
         <p>Total supply: 1</p>
         <button 
             onClick={mintNFT} 
