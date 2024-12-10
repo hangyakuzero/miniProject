@@ -71,7 +71,7 @@ export default function MintNFTPage() {
   return (
     <div className='bg-base-100 flex-row flex'>
         <img className=' h-screen w-[40%] py-10 px-5'
-        src='https://static.wixstatic.com/media/9934d5_940d1291c69f46a08fd07fe18822e86d~mv2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/DSU%205.jpg'
+        src='https://ksgi.edu.in/img/blog/ksit_widget1.webp'
         alt="RWA" />
         <div className=' text-center w-full pt-5'>
 
